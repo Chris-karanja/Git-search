@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
-import { Http } from '@angular/http';
+import { Component, OnInit } from '@angular/core';
+import { GitgetterService } from "./gitgetter.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Git';
+export class AppComponent implements OnInit {
+  user: any;
+  username: string;
 
-  constructor(private http: Http){}
-
-  userName = '';
-  searchUser() {
-    this.http.get('https://api.github.com/users' + this.userName)
+  constructor(private githubService: GitgetterService) {
+    this.githubService.getUser().subscribe(
+      (user) => {
+        this.user = user;
+      }
+    );
   }
-}
+//searchUser() {
+  //
+  //}
+  ngOnInit() {
+  }
+
+} 
