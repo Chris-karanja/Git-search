@@ -5,7 +5,9 @@
   </button>
 </nav>
 <div class="container">
-
+<br>
+<br>
+<br>
     <div class="row">
         <div class="col-md-12">
           <input type="text" class="form-control" placeholder="search" [(ngModel)]="username" name="username">
@@ -13,7 +15,8 @@
           <button class="btn btn-success btn-block" id="name" (click)=searchUser()>Search</button>
         </div>
         <br><br>
-      </div>
+    </div>
+
  <div class="row" *ngIf="user">
       <div class="col-md-6">
       <div class="panel panel-default">
@@ -51,5 +54,29 @@
         </div>
       </div>
     </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default allRepos">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{user.login}}'s Repos</h3>
+          </div>
+          <div class="panel-body">
+            <div *ngFor="let repo of repos">
+              <div class="row jumbotron">
+                <div class="col-md-12">
+                  <h2><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h2>
+                  <p>{{repo.description}}</p>
+                </div>
+                <div class="col-md-4">
+                  <span class="label label-default">{{repo.watchers}} Watchers</span>
+                  <span class="label label-primary">{{repo.forks}} Forks</span>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+
+
+
   </div>
 </div> 
