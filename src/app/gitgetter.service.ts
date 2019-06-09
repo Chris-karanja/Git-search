@@ -17,7 +17,7 @@ export class GitgetterService {
 
   constructor(private http: Http) {
    
-    this.username = '';
+    this.username = 'Chris-karanja';
   }
 
   private handleError(error: any) {
