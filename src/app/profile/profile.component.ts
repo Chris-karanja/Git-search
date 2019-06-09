@@ -9,15 +9,23 @@ import { GitgetterService } from "../gitgetter.service"
 export class ProfileComponent implements OnInit {
   user: any;
   username: string;
+  repos: any[];
 
-  constructor(private gitgetterService: GitgetterService) {
-    this.gitgetterService.getUser().subscribe(
-      (user) => {
-        this.user = user;
-      }
-    );
-   }
-   ngOnInit() {
+  constructor(private githubService: GitgetterService) {
+    this.user = false;
+  }
+
+  searchUser() {
+    this.githubService.updateUser(this.username);
+
+    this.githubService.getUser()
+      .subscribe((user) => {this.user = user;});
+
+    this.githubService.getRepos()
+      .subscribe((repos) => {this.repos = repos;});
+  }
+
+  ngOnInit() {
   }
   
 }
