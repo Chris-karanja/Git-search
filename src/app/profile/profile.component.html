@@ -1,10 +1,27 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Git-Search APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
 <div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+          <input type="text" class="form-control" placeholder="search" [(ngModel)]="username" name="username">
+          <br>
+          <button class="btn btn-success btn-block" id="name" (click)=searchUser()>Search</button>
+        </div>
+        <br><br>
+      </div>
  <div class="row" *ngIf="user">
       <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3>{{user.name}}'s Profile</h3>
-        </div>
+        </div>      
+        profile
+
         <div class="panel-body">
           <div class="row">
             <div class="col-md-4">

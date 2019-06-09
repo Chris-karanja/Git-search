@@ -10,16 +10,6 @@ export class AppComponent implements OnInit {
   user: any;
   username: string;
 
-  constructor(private githubService: GitgetterService) {
-    this.githubService.getUser().subscribe(
-      (user) => {
-        this.user = user;
-      }
-    );
-  }
-//searchUser() {
-  //
-  //}
   ngOnInit() {
   }
 
