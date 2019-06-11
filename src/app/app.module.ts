@@ -10,7 +10,7 @@ import { GitgetterService } from './gitgetter.service';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+
 import { LandingComponent } from './landing/landing.component';
 
 
@@ -19,7 +19,7 @@ import { LandingComponent } from './landing/landing.component';
     AppComponent,
     ProfileComponent,
     routingComponents,
-    LandingComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

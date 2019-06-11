@@ -3,6 +3,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingComponent } from './landing/landing.component';
 
+
 const  routes: Routes = [
     { path: 'profile', component: ProfileComponent },
     { path: '', component: LandingComponent },
@@ -14,4 +15,4 @@ const  routes: Routes = [
 })
 
 export class AppRoutingModule {}
-export const routingComponents = [ProfileComponent]
+export const routingComponents = [LandingComponent,ProfileComponent]
